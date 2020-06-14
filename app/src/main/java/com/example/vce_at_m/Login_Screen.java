@@ -17,6 +17,8 @@ public class Login_Screen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login__screen);
         Button login = findViewById(R.id.button5);
+        id = findViewById(R.id.editTextTextPersonName);
+        pass = findViewById(R.id.editTextTextPassword);
         login.setOnClickListener(new View.OnClickListener(){
 
             @Override
@@ -36,10 +38,11 @@ public class Login_Screen extends AppCompatActivity {
         });
     }
 
-    private boolean verify() {
-        id = findViewById(R.id.editTextTextPersonName);
-        pass = findViewById(R.id.editTextTextPassword);
-        return true;
+    private boolean verify(){
+        String roll = id.getText().toString();
+        if((pass.getText().toString()).length()!=6 || roll.length()!=15)
+            return false;
+        return roll.substring(0, 4).equals("1602") && roll.charAt(4) == '-' && roll.charAt(7) == '-' && roll.charAt(11) == '-';
     }
 
     public void goToAttendenceMarks(View.OnClickListener v){
