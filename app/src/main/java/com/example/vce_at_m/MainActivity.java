@@ -34,6 +34,9 @@ public class MainActivity extends AppCompatActivity {
         rollno = findViewById(R.id.textView);
         descrip = findViewById(R.id.textView8);
         overall = findViewById(R.id.textView9);
+        webView.getSettings().setBuiltInZoomControls(true);
+        webView.getSettings().setDisplayZoomControls(false);
+        webView.setInitialScale(100);
         pref = getSharedPreferences("login_details", Context.MODE_PRIVATE);
         id = pref.getString("id",null);
         pass = pref.getString("pass",null);
@@ -77,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
                 doc = (Document) Jsoup.connect("https://www.vce.ac.in/")
                         .ignoreContentType(true)
                         .userAgent("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36")
+                        .timeout(3000000)
                         .data("LoginID",id,"Password",pass)
                         .post();
                 checker = doc.getElementById("studForm");
@@ -95,14 +99,11 @@ public class MainActivity extends AppCompatActivity {
                     flag = 3;
                 }
                 else{
-                    System.out.println("H");
                     checker = doc.getElementById("loginForm");
                     if(checker == null){
-                        System.out.println("i");
                         flag = 1;//server down
                     }
                     else{
-                        System.out.println("y");
                         flag = 0;//invalid
                     }
                 }
@@ -121,7 +122,7 @@ public class MainActivity extends AppCompatActivity {
             }
             else if(flag == 1){
                 overall.setText("sorry");
-                webView.loadData(doc.toString(),"text/html","utf-8");
+                webView.loadData("<h2>College server down<h2>","text/html","utf-8");
             }
             else if(flag == 2){
                 overall.setText("sorry");
@@ -160,8 +161,8 @@ public class MainActivity extends AppCompatActivity {
         protected Void doInBackground(Void... voids) {
             try {
                 doc = (Document) Jsoup.connect("https://www.vce.ac.in/")
-                        .ignoreContentType(true)
                         .userAgent("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36")
+                        .timeout(3000000)
                         .data("LoginID",id,"Password",pass)
                         .post();
                 checker = doc.getElementById("studForm");
@@ -203,7 +204,7 @@ public class MainActivity extends AppCompatActivity {
             }
             else if(flag == 1){
                 overall.setText("sorry");
-                webView.loadData(doc.toString(),"text/html","utf-8");
+                webView.loadData("<h2>College server down<h2>","text/html","utf-8");
             }
             else if(flag == 2){
                 overall.setText("sorry");

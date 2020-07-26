@@ -10,11 +10,12 @@
         android:id="@+id/editTextTextPersonName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="23dp"
-        android:layout_marginTop="78dp"
+        android:layout_marginTop="56dp"
         android:ems="10"
         android:hint="1602-**-73*-***"
         android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.135"
         app:layout_constraintStart_toEndOf="@+id/textView4"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
@@ -22,11 +23,11 @@
         android:id="@+id/textView4"
         android:layout_width="30dp"
         android:layout_height="41dp"
-        android:layout_marginStart="84dp"
-        android:layout_marginTop="78dp"
+        android:layout_marginTop="61dp"
         android:paddingLeft="8dp"
         android:paddingTop="10dp"
         android:text="ID:"
+        app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonName"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
@@ -34,11 +35,11 @@
         android:id="@+id/editTextTextPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="23dp"
-        android:layout_marginTop="38dp"
+        android:layout_marginTop="64dp"
         android:ems="10"
         android:hint="******"
         android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView5"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
 
@@ -46,11 +47,11 @@
         android:id="@+id/textView5"
         android:layout_width="71dp"
         android:layout_height="25dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="52dp"
-        android:text="Password:"
+        android:layout_marginTop="72dp"
         android:paddingLeft="3dp"
         android:paddingTop="3dp"
+        android:text="Password:"
+        app:layout_constraintEnd_toStartOf="@+id/editTextTextPassword"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
@@ -58,11 +59,10 @@
         android:id="@+id/button5"
         android:layout_width="116dp"
         android:layout_height="52dp"
-        android:layout_marginStart="158dp"
-        android:layout_marginTop="94dp"
-        android:layout_marginBottom="377dp"
+        android:layout_marginTop="64dp"
         android:text="Save"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.444"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
@@ -70,14 +70,13 @@
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="131dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginEnd="131dp"
+        android:layout_marginTop="16dp"
         android:padding="10dp"
         android:text="Enter details"
         android:textSize="25dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.538"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -85,11 +84,11 @@
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="128dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="21dp"
         android:text="Wrong ID / Password pattern"
         android:textColor="@android:color/holo_red_dark"
         android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
 
